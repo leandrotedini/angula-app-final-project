@@ -1,0 +1,18 @@
+<div class="header">
+    <button mat-flat-button (click)="logOut()">Logout</button>
+</div>
+
+<div>
+    <!-- En Proceso -->
+    <app-header-carousel></app-header-carousel>
+</div>
+<div class="container-movie-list">
+    @for (genre of moviesGenres; track genre.id) {
+        @defer (on viewport) {
+            <app-movie-list [movieGenreName]="genre.name" [movieGenreId]="genre.id"></app-movie-list>
+        } @placeholder {
+            <div class="placeholder"></div>
+        }
+    }
+</div>
+<router-outlet></router-outlet>

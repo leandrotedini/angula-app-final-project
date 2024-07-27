@@ -1,0 +1,85 @@
+h3 {
+	font-size: 2rem;
+	margin: 0;
+}
+
+.container-primary {
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+
+.container-primary .arrow-left,
+.container-primary .arrow-right {
+	position: absolute;
+	border: none;
+	background: rgba(0, 0, 0, 0.3);
+	font-size: 40px;
+	height: 50%;
+	top: calc(50% - 25%);
+	line-height: 40px;
+	width: 50px;
+	color: #fff;
+	cursor: pointer;
+	z-index: 500;
+	transition: .2s ease all;
+}
+
+.container-primary .arrow-left:hover,
+.container-primary .arrow-right:hover {
+	background: rgba(0, 0, 0, .9);
+}
+
+.container-primary .arrow-left {
+	left: 0;
+}
+
+.container-primary .arrow-right {
+	right: 0;
+}
+
+/* .arrow-left .mat-icon{
+	font-size: 40px;
+} */
+
+/* ---- ----- ----- Carousel ----- ----- ----- */
+.container-carousel {
+	width: 100%;
+	padding: 20px 0;
+	overflow: hidden;
+	scroll-behavior: smooth;
+	min-height: 200px;
+}
+
+.container-carousel .carousel {
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+.movie {
+	min-width: calc(100% / 10);
+	transition: .3s ease all;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, .3);
+}
+
+.movie:hover {
+	transform: scale(1.2);
+	transform-origin: center;
+}
+
+.movie img {
+	width: 100%;
+	vertical-align: top;
+}
+
+@media only screen and (max-width: 1200px) {
+	.movie {
+		min-width: calc(100% / 8);
+	}
+}
+
+@media only screen and (max-width: 992px) {
+	.movie {
+		min-width: calc(100% / 6);
+	}
+}

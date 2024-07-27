@@ -1,0 +1,19 @@
+<p>movie-custom-lists works!</p>
+
+<mat-dialog-content>
+    @for (customMovieList of customMovieLists; track customMovieList.id) {
+        <div class="custom-list">
+            <div class="custom-list__title">
+                <span class="title">{{ customMovieList.name }}</span>
+                <p class="description">{{ customMovieList.name }}</p>
+            </div>
+            <button mat-button (click)="addToList(customMovieList.id)">Add</button>
+        </div>
+
+    }
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button mat-flat-button (click)="onNoClick()">Create List</button>
+    <button mat-button (click)="onNoClick()">Cancel</button>
+</mat-dialog-actions>

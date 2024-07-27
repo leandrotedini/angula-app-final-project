@@ -1,0 +1,26 @@
+<div class="movie-list">
+
+    <h3>{{ movieGenreName }}</h3>
+
+    <div class="container-primary">
+        <button role="button" id="arrow-left" class="arrow-left" (click)="scrollMovies(false)">
+            <mat-icon fontIcon="chevron_left"></mat-icon>
+        </button>
+
+        <div [id]="movieGenreId" class="container-carousel">
+            <div class="carousel">
+                @for (movie of movies; track movie.id) {
+                    <div class="movie">
+                        <a (click)="openDialog(movie)">
+                            <img [src]="getFullImageUrl(movie.poster_path)" alt="" >
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <button role="button" id="arrow-right" class="arrow-right" (click)="scrollMovies(true)">
+            <mat-icon fontIcon="chevron_right"></mat-icon>
+        </button>
+    </div>
+</div>

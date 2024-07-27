@@ -1,0 +1,30 @@
+<mat-dialog-content>
+  <mat-card>
+    <div class="card-container">
+      <img [src]="fullImageUrl" alt="">
+      <div class="card-content">
+        <mat-card-header>
+          <mat-card-title>{{ movie.title }}</mat-card-title>
+          <mat-card-subtitle>{{ movie.release_date }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <p>{{ movie.overview }}</p>
+            <div class="button-container">
+              @if (favorite$ | async;){
+                <button mat-flat-button (click)="addToFavorite(movie.id, true)"><mat-icon>favorite</mat-icon>Like</button>
+              } @else {
+                <button mat-stroked-button (click)="addToFavorite(movie.id, false)"><mat-icon>favorite</mat-icon>Like</button>
+              }
+              <!-- <button mat-button (click)="testFn()">Console</button> -->
+            </div>
+        </mat-card-content>
+
+      </div>
+    </div>
+  </mat-card>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <!-- aun en desarrollo -->
+  <!-- <button mat-flat-button (click)="openDialog(movie.id)"><mat-icon fontIcon="add"></mat-icon>Add to list</button> -->
+  <button mat-button (click)="onNoClick()">Close</button>
+</mat-dialog-actions>
